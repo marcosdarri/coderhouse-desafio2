@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { CartWidjet } from "./CartWidjet";
 
 const NavBar = () => {
   return (
@@ -19,20 +15,26 @@ const NavBar = () => {
               <Nav.Link href="#link">About us</Nav.Link>
               <Nav.Link href="#products">Products</Nav.Link>
               <Nav.Link href="#contact">Contact us</Nav.Link>
-              <NavDropdown title="Categorias Clickeables" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Categoria clickeable 1</NavDropdown.Item>
+              <NavDropdown
+                title="Categorias Clickeables"
+                id="basic-nav-dropdown"
+              >
+                <NavDropdown.Item href="#action/3.1">
+                  Categoria clickeable 1
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
-                Categoria clickeable 2
+                  Categoria clickeable 2
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
-                Categoria clickeable 3
+                  Categoria clickeable 3
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
-                Categoria clickeable 4
+                  Categoria clickeable 4
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
+            <CartWidjet/>
           </Navbar.Collapse>
         </Container>
       </Navbar>
