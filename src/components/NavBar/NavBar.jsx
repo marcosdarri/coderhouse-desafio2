@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { CartWidjet } from "./CartWidjet";
+import CartWidjet from "../CartWidjet/CartWidjet";
 
 const NavBar = () => {
   return (
