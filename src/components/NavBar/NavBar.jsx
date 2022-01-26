@@ -1,13 +1,16 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import CartWidjet from "../CartWidjet/CartWidjet";
+import {Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
+          <Link to='/'>
           <Navbar.Brand href="#home">NombreDeEmpresa</Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -34,7 +37,11 @@ const NavBar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <CartWidjet/>
+            
+            <Link to='/cart'>
+              <CartWidjet/>
+            </Link>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>

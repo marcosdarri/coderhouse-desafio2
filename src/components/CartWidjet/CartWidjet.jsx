@@ -1,6 +1,9 @@
+import React from "react";
+
 const CartWidjet = () => {
   return (
-    <a className="navbar-brand" href="https://www.mercadolibre.com.uy/">
+    <React.Fragment>
+      <a className="navbar-brand" href="https://www.mercadolibre.com.uy/">
               <img
                 src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png"
                 alt=""
@@ -10,6 +13,10 @@ const CartWidjet = () => {
               />
               Bootstrap
             </a>
+    </React.Fragment>
+    
+
+            
   );
 };
 
