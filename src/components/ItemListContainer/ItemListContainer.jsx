@@ -7,21 +7,26 @@ import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = (props) => {
-
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
-  const {idCategoria} = useParams();
+  const { idCategoria } = useParams();
 
   useEffect(() => {
-    if(idCategoria){
-      getFetch.then((res) => setItems(res.filter(items => items.categoria===idCategoria))).catch((err) => console.log(err)).finally(()=> setLoading(false));
-    }else{
-      getFetch.then((res) => setItems(res)).catch((err) => console.log(err)).finally(()=> setLoading(false));
- 
+    if (idCategoria) {
+      getFetch
+        .then((res) =>
+          setItems(res.filter((items) => items.categoria === idCategoria))
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    } else {
+      getFetch
+        .then((res) => setItems(res))
+        .catch((err) => console.log(err))
+        //.finally(() => setLoading(false));
     }
   }, [idCategoria]);
-  
 
   return (
     <div className="ItemListContainer">

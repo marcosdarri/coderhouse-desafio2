@@ -5,8 +5,17 @@ const ItemDetail = ({items} ) => {
 
   return (
     <React.Fragment>
-      <h2>Item Detail:</h2>
-      <p>{items.titulo}</p>
+      <div className="thumbnail">
+      <h3>{items.title}</h3>
+          <img
+            src={items.pictureUrl}
+            alt={items.title}
+            style={{ width: "200px", height: "200px" }}
+          />
+          <p>{items.description}</p>
+          <p>{items.precio}</p>
+        </div>
+      
     </React.Fragment>
   );
 };

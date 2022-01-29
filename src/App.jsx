@@ -11,15 +11,15 @@ export default function App() {
  
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" style={{backgroundColor: "#F5F5F5"}}>
         <NavBar>
           <CartWidjet />
         </NavBar>
         <Routes>
           <Route exact path="/" element={<ItemListContainer />} />
-          <Route exact path="/detalle" element={<ItemDetailContainer />} />
+          {/* <Route exact path="/detalle" element={<ItemDetailContainer />} /> */}
           <Route exact path="/categorias/:idCategoria" element={<ItemListContainer />} />
-          <Route exact path="/detalle/:idDetalle" element={<ItemDetailContainer />} />
+          <Route exact path="/detalle/:idItem" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </div>

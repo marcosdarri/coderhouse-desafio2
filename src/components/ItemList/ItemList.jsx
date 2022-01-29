@@ -16,6 +16,7 @@ const ItemList = ({ items }) => {
         title={item.title}
         description={item.description}
         categoria={item.categoria}
+        precio={item.precio}
         pictureUrl={item.pictureUrl}
       />
       <NavLink to={`/detalle/${item.id}`}>
