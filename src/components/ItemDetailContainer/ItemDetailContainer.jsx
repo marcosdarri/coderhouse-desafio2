@@ -1,12 +1,39 @@
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import { getFetch } from "../helpers/itemsArray";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
 
+const ItemDetailContainer = () => {
+  // const [items, setItems] = useState({});
+  // const [loading, setLoading] = useState(true)
+  // const itemId = 1;
 
- const ItemDetailContainer = () => {
-    return (
-      <div className="ItemDetailContainer">
-        
-      </div>
-    );
-  }
+  // useEffect(() => {
+  //     if(itemId){
+  //       getFetch.then((data) => setItems(data.find((item) => item.id===itemId))).catch((err) => console.log(err)).finally(()=> setLoading(false));;
+  //     }else{
+  //       getFetch.then((data) => setItems(data)).catch((err) => console.log(err)).finally(()=> setLoading(false));
+  //     }
+  // }, [itemId]);
 
-  export default ItemDetailContainer;
+  const [items, setItems] = useState([]);
+  const {productId} = useParams();
+
+  useEffect(() => {
+    getFetch()
+      .then((data) => {
+        setItems(data.find((item) => item.id === productId));
+      })
+      .catch((err) => console.log(err));
+  }, [productId]);
+
+  console.log(items)
+  return (
+    <div className="ItemDetailContainer">
+      <h1>Soy el detalle</h1>
+      <ItemDetail items={items} />
+    </div>
+  );
+};
+
+export default ItemDetailContainer;

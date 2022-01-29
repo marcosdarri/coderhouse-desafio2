@@ -19,6 +19,7 @@ export default function ItemCount({ stock, initial }) {
   };
   return (
     <React.Fragment >
+        <h2>Item Count:</h2>
         <h1>{count}</h1>
       <button onClick={sumar}>Sumar</button>
       <button onClick={restar}>Restar</button>

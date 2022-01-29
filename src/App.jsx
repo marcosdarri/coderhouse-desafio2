@@ -15,10 +15,11 @@ export default function App() {
         <NavBar>
           <CartWidjet />
         </NavBar>
-        <h2>Las ofertas de la semana</h2>
         <Routes>
           <Route exact path="/" element={<ItemListContainer />} />
           <Route exact path="/detalle" element={<ItemDetailContainer />} />
+          <Route exact path="/categorias/:idCategoria" element={<ItemListContainer />} />
+          <Route exact path="/detalle/:idDetalle" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </div>

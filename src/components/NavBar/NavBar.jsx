@@ -1,47 +1,40 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidjet from "../CartWidjet/CartWidjet";
-import {Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <div>
       <Navbar bg="light" expand="lg">
         <Container>
-          <Link to='/'>
-          <Navbar.Brand href="#home">NombreDeEmpresa</Navbar.Brand>
-          </Link>
+          <NavLink to="/" className="navBarLink">
+            <Navbar.Brand href="#home">Floreria Paysandu</Navbar.Brand>
+          </NavLink>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">About us</Nav.Link>
-              <Nav.Link href="#products">Products</Nav.Link>
-              <Nav.Link href="#contact">Contact us</Nav.Link>
-              <NavDropdown
-                title="Categorias Clickeables"
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="#action/3.1">
-                  Categoria clickeable 1
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Categoria clickeable 2
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Categoria clickeable 3
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Categoria clickeable 4
-                </NavDropdown.Item>
-              </NavDropdown>
+              <NavLink  to="/" className="navBarLink">
+                <Nav.Link href="#home">Home</Nav.Link>
+              </NavLink>
+              <NavLink to="/detalle" className="navBarLink">
+                <Nav.Link href="#link">Detalle</Nav.Link>
+              </NavLink>
+              <NavLink to="/categorias/rosa" className="navBarLink">
+              <Nav.Link href="#link">Rosas</Nav.Link>
+              </NavLink>
+              <NavLink to="/categorias/flor" className="navBarLink">
+              <Nav.Link href="#link">Flores</Nav.Link>
+              </NavLink>
+
+              
+            
             </Nav>
             
-            <Link to='/cart'>
-              <CartWidjet/>
-            </Link>
-            
+            <NavLink to="/cart" className="navBarLink">
+              <CartWidjet />
+            </NavLink>
           </Navbar.Collapse>
         </Container>
       </Navbar>

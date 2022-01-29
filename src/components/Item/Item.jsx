@@ -1,18 +1,20 @@
 import React from "react";
 
-
-
-const Item = ({ id, title, description, price, pictureUrl }) => {
+const Item = ({ id, title, description, categoria, pictureUrl }) => {
   return (
-    // Desarrolla la vista de un ítem donde item es de tipo
-    // { id, title, price, pictureUrl }
+    
     <React.Fragment>
-      <li id={id} class="span4">
-        <div class="thumbnail">
-          <img src={pictureUrl} alt={title} style={{width:"200px", height:"200px"}}/>
+     
+      <li id={id} className="span4">
+        <div className="thumbnail">
+          <img
+            src={pictureUrl}
+            alt={title}
+            style={{ width: "200px", height: "200px" }}
+          />
           <h3>{title}</h3>
           <p>{description}</p>
-          <p>{price}</p>
+          <p>{categoria}</p>
         </div>
       </li>
     </React.Fragment>
