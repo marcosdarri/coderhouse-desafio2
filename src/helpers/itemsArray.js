@@ -56,7 +56,7 @@ const items = [
   },
 ];
 
-export const getFetch = new Promise((res, rej) => {
+export const getFetch = () => new Promise((res, rej) => {
   //acciones
   let condition = true;
   if (condition) {

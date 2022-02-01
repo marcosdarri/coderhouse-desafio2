@@ -12,7 +12,10 @@ export default function ItemCount({ stock, initial }) {
     }
   };
   const restar = () => {
-    setCount(count - 1);
+    if(count>=1){
+      setCount(count - 1);
+    }
+    
   };
   const onAdd = () => {
     console.log(count);
