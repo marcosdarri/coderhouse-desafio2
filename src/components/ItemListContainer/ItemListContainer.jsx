@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getFetch } from "../../helpers/itemsArray";
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import FadeLoader from 'react-spinners/FadeLoader';
@@ -41,7 +40,7 @@ const ItemListContainer = (props) => {
     return (
       <div className="ItemListContainer">
         <h4>{props.greeting}</h4>
-        <ItemCount stock="5" initial="1" />
+        
         <ItemList items={items} />
       </div>
     );

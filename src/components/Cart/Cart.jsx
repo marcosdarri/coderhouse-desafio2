@@ -1,9 +1,16 @@
 import React from "react";
+import { useCartContext } from "../../context/CartContext";
 
 const Cart = () => {
+
+  const { cartList, vaciarCarrito } = useCartContext()
+
+
   return (
     <React.Fragment>
-      <h1>Soy el Cart</h1>
+      { cartList.map(item => <li>{item.title} Item: {item.nombre} Cantidad: {item.cantidad}</li> ) }
+        <button onClick={vaciarCarrito} >Vaciar Carrito</button>
+
     </React.Fragment>
   );
 };

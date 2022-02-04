@@ -5,12 +5,14 @@ import NavBar from "./components//NavBar/NavBar";
 import CartWidjet from "./components/CartWidjet/CartWidjet";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
+import CartContextProvider from "./context/CartContext";
 
 
 export default function App() {
  
   return (
     <BrowserRouter>
+    <CartContextProvider>
       <div className="App" style={{backgroundColor: "#F5F5F5"}}>
         <NavBar>
           <CartWidjet />
@@ -24,7 +26,7 @@ export default function App() {
         </Routes>
       </div>
   
-      
+      </CartContextProvider>
     </BrowserRouter>
   );
 }
