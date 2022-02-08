@@ -12,7 +12,7 @@ const Item = ({ id, title, description, precio, categoria, pictureUrl }) => {
         <h3>{title}</h3>
         <p>{description}</p>
         <p>{categoria}</p>
-        <p>{precio}</p>
+        <p>${precio}</p>
       </div>
     </React.Fragment>
   );

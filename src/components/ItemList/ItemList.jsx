@@ -8,7 +8,7 @@ const ItemList = ({ items }) => {
 
   const listOfItems = items.map((item) => (
     <React.Fragment>
-      <h2>Item List:</h2>
+      <br></br>
       <br></br>
       <Item
         key={item.id}

@@ -18,7 +18,7 @@ export default function App() {
           <CartWidjet />
         </NavBar>
         <Routes>
-          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/" element={<ItemListContainer greeting={"Bienvenidos a la Floreria Paysandu!"}/>} />
           {/* <Route exact path="/detalle" element={<ItemDetailContainer />} /> */}
           <Route exact path="/categorias/:idCategoria" element={<ItemListContainer />} />
           <Route exact path="/detalle/:idItem" element={<ItemDetailContainer />} />

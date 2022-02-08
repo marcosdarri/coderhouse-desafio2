@@ -10,7 +10,7 @@ const ItemDetail = ({ items }) => {
   //setContador(0);
 
   const onAdd = (count) => {
-    agregarAlCarrito({ nombre: items.title, cantidad: count });
+    agregarAlCarrito({ nombre: items.title, cantidad: count, id: items.id, precio: items.precio, pictureUrl: items.pictureUrl });
     setContador(count);
   };
 
@@ -24,7 +24,7 @@ const ItemDetail = ({ items }) => {
           style={{ width: "200px", height: "200px" }}
         />
         <p>{items.description}</p>
-        <p>{items.precio}</p>
+        <p>${items.precio}</p>
       </div>
       {contador === 0 ? (
         <ItemCount onAdd={onAdd} stock="5" initial="1" />

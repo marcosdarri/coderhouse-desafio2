@@ -24,8 +24,8 @@ const NavBar = () => {
               <NavLink to="/categorias/rosa" className="navBarLink">
               <Nav.Link href="#link">Rosas</Nav.Link>
               </NavLink>
-              <NavLink to="/categorias/flor" className="navBarLink">
-              <Nav.Link href="#link">Flores</Nav.Link>
+              <NavLink to="/categorias/tulipan" className="navBarLink">
+              <Nav.Link href="#link">Tulipanes</Nav.Link>
               </NavLink>
 
               
