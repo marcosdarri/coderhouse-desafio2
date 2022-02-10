@@ -1,7 +1,14 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { getFetch } from "../../helpers/itemsArray";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  where,
+  query,
+} from "firebase/firestore";
+// import { getFetch } from "../../helpers/itemsArray";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -14,14 +21,42 @@ const ItemListContainer = (props) => {
   const { idCategoria } = useParams();
 
   useEffect(() => {
-    setLoading(true);
+    const db = getFirestore();
 
-    getFetch()
-      .then((res) =>
-        setItems(idCategoria ? res.filter((items) => items.categoria === idCategoria): res)
-      )
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
+    const queryCollection = collection(db, "items");
+
+   
+
+    if (idCategoria) {
+
+      const queryFiltro = query(
+        collection(db, "items"),
+        where("categoria", "==", idCategoria)
+      );
+
+      getDocs(queryFiltro)
+        .then((resp) =>
+          setItems(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    } else {
+      getDocs(queryCollection)
+        .then((resp) =>
+          setItems(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    }
+
+    // setLoading(true);
+
+    // getFetch()
+    //   .then((res) =>
+    //     setItems(idCategoria ? res.filter((items) => items.categoria === idCategoria): res)
+    //   )
+    //   .catch((err) => console.log(err))
+    //   .finally(() => setLoading(false));
   }, [idCategoria]);
 
   return (
