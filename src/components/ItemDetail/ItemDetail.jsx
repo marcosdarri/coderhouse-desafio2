@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
+import { Button } from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
@@ -31,10 +32,10 @@ const ItemDetail = ({ items }) => {
       ) : (
         <>
           <Link to="/cart">
-            <button>Terminar compra</button>
+          <Button variant="primary" >Ir al carrito</Button>
           </Link>
           <Link to="/">
-            <button>Seguir comprando</button>
+          <Button variant="primary" >Seguir comprando</Button>
           </Link>
         </>
       )}

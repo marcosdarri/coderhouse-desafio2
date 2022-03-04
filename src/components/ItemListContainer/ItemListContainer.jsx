@@ -49,14 +49,6 @@ const ItemListContainer = (props) => {
         .finally(() => setLoading(false));
     }
 
-    // setLoading(true);
-
-    // getFetch()
-    //   .then((res) =>
-    //     setItems(idCategoria ? res.filter((items) => items.categoria === idCategoria): res)
-    //   )
-    //   .catch((err) => console.log(err))
-    //   .finally(() => setLoading(false));
   }, [idCategoria]);
 
   return (

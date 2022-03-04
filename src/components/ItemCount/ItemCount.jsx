@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from 'react';
+import { Button } from "react-bootstrap";
 
 export default function ItemCount({ stock, initial, onAdd }) {
     const number = Number(initial);
@@ -25,10 +26,11 @@ export default function ItemCount({ stock, initial, onAdd }) {
     <React.Fragment >
         <h3>Item Count:</h3>
         <h1>{count}</h1>
-      <button onClick={sumar}>Sumar</button>
-      <button onClick={restar}>Restar</button>
-      <button onClick={agregar} style={{marginBottom: "30px"}}>onAdd</button>
+        <Button variant="primary" onClick={sumar}>Sumar</Button>
+        <Button variant="primary" onClick={restar}>Restar</Button>
+        <Button variant="primary" onClick={agregar}>Agregar al carrito</Button>
     </React.Fragment>
   );
 }
 
+//style={{marginLeft: "5px"}}

@@ -28,7 +28,6 @@ const ItemDetailContainer = () => {
   } else {
     return (
       <div className="ItemDetailContainer">
-        <h2>Item Detail:</h2>
         <ItemDetail items={item} />
       </div>
     );
