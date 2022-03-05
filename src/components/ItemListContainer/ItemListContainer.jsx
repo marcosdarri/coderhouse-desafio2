@@ -25,10 +25,7 @@ const ItemListContainer = (props) => {
 
     const queryCollection = collection(db, "items");
 
-   
-
     if (idCategoria) {
-
       const queryFiltro = query(
         collection(db, "items"),
         where("categoria", "==", idCategoria)
@@ -48,7 +45,6 @@ const ItemListContainer = (props) => {
         .catch((err) => console.log(err))
         .finally(() => setLoading(false));
     }
-
   }, [idCategoria]);
 
   return (

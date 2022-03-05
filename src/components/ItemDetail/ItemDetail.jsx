@@ -5,13 +5,19 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({ items }) => {
-  const [contador, setContador ] = useState(0);
+  const [contador, setContador] = useState(0);
   const { cartList, agregarAlCarrito } = useCartContext();
 
   //setContador(0);
 
   const onAdd = (count) => {
-    agregarAlCarrito({ nombre: items.title, cantidad: count, id: items.id, precio: items.precio, pictureUrl: items.pictureUrl });
+    agregarAlCarrito({
+      nombre: items.title,
+      cantidad: count,
+      id: items.id,
+      precio: items.precio,
+      pictureUrl: items.pictureUrl,
+    });
     setContador(count);
   };
 
@@ -32,10 +38,10 @@ const ItemDetail = ({ items }) => {
       ) : (
         <>
           <Link to="/cart">
-          <Button variant="primary" >Ir al carrito</Button>
+            <Button variant="primary">Ir al carrito</Button>
           </Link>
           <Link to="/">
-          <Button variant="primary" >Seguir comprando</Button>
+            <Button variant="primary">Seguir comprando</Button>
           </Link>
         </>
       )}

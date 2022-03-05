@@ -15,23 +15,20 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <NavLink  to="/" className="navBarLink">
+              <NavLink to="/" className="navBarLink">
                 <Nav.Link href="#home">Home</Nav.Link>
               </NavLink>
               {/* <NavLink to="/detalle" className="navBarLink">
                 <Nav.Link href="#link">Detalle</Nav.Link>
               </NavLink> */}
               <NavLink to="/categorias/rosa" className="navBarLink">
-              <Nav.Link href="#link">Rosas</Nav.Link>
+                <Nav.Link href="#link">Rosas</Nav.Link>
               </NavLink>
               <NavLink to="/categorias/tulipan" className="navBarLink">
-              <Nav.Link href="#link">Tulipanes</Nav.Link>
+                <Nav.Link href="#link">Tulipanes</Nav.Link>
               </NavLink>
-
-              
-            
             </Nav>
-            
+
             <NavLink to="/cart" className="navBarLink">
               <CartWidjet />
             </NavLink>

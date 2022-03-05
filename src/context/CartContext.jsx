@@ -6,7 +6,6 @@ export function useCartContext() {
   return useContext(cartContext);
 }
 
-
 //crear un componente
 
 function CartContextProvider({ children }) {
@@ -14,10 +13,10 @@ function CartContextProvider({ children }) {
 
   function agregarAlCarrito(item) {
     //setCartList([...cartList, item]);
-    if(isInCart(item.id, cartList)){
-        addItem(item, item.cantidad, item.precio, item.pictureUrl)
-    }else{
-        setCartList([...cartList, item]);
+    if (isInCart(item.id, cartList)) {
+      addItem(item, item.cantidad, item.precio, item.pictureUrl);
+    } else {
+      setCartList([...cartList, item]);
     }
   }
 
@@ -37,10 +36,10 @@ function CartContextProvider({ children }) {
 
   // removeItem(itemId) // Remover un item del cart usando su id
 
-function removeItem(itemId) {
+  function removeItem(itemId) {
     for (let i = 0; i < cartList.length; i++) {
       if (cartList[i].id === itemId) {
-        setCartList(cartList.filter(el => el.id !== itemId));
+        setCartList(cartList.filter((el) => el.id !== itemId));
       }
     }
   }
@@ -60,9 +59,9 @@ function removeItem(itemId) {
   // isEmpty // Retorna si el cartList esta vacio o no.
 
   function isEmpty(cartList) {
-    if(cartList.length===0){
+    if (cartList.length === 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -72,17 +71,17 @@ function removeItem(itemId) {
   function precioTotal(cartList) {
     let total = 0;
     for (let i = 0; i < cartList.length; i++) {
-      total += (parseInt(cartList[i].precio) * parseInt(cartList[i].cantidad))
+      total += parseInt(cartList[i].precio) * parseInt(cartList[i].cantidad);
     }
     return total;
   }
 
-   // cantidadItems // Retorna la cantidad total de items en el carrito.
+  // cantidadItems // Retorna la cantidad total de items en el carrito.
 
-   function cantidadItems(cartList) {
+  function cantidadItems(cartList) {
     let total = 0;
     for (let i = 0; i < cartList.length; i++) {
-      total +=  parseInt(cartList[i].cantidad);
+      total += parseInt(cartList[i].cantidad);
     }
     return total;
   }

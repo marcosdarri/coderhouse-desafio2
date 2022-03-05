@@ -20,9 +20,8 @@ const ItemList = ({ items }) => {
         pictureUrl={item.pictureUrl}
       />
       <NavLink to={`/detalle/${item.id}`}>
-      <Button>Ver detalle</Button>
-      </NavLink> 
-      
+        <Button>Ver detalle</Button>
+      </NavLink>
     </React.Fragment>
   ));
 
