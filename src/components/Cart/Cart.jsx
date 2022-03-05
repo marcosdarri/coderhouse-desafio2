@@ -79,12 +79,6 @@ const Cart = () => {
       )
       .catch((err) => console.log(err))
       .finally(() => {
-        setDataForm({
-          name: "",
-          phone: "",
-          email: "",
-          validarEmail: "",
-        });
         vaciarCarrito();
       });
     batch.commit();
@@ -105,10 +99,10 @@ const Cart = () => {
       dataForm.phone !== ""
     ) {
       setValido(true);
-    }else {
+    } else {
       alert(
         "Complete correctamente el formulario antes de realizar la compra!"
-      )
+      );
     }
   };
 
@@ -120,6 +114,17 @@ const Cart = () => {
           <Link to="/">
             <Button variant="primary">Seguir comprando</Button>
           </Link>
+          {valido ? (
+            <>
+              <h3>Datos de tu orden:</h3>
+              <h5>Id de la orden: {id}</h5>
+              <h5>A nombre de: {dataForm.name}</h5>
+              <h5>Email: {dataForm.email}</h5>
+              <h5>Telefono: {dataForm.phone}</h5>
+            </>
+          ) : (
+            <h3>Ninguna orden ha sido realizada todavia.</h3>
+          )}
         </>
       ) : (
         <>
@@ -184,18 +189,15 @@ const Cart = () => {
 
             <br />
 
-            {
-              !valido ? (
-                <Button variant="primary" onClick={formValido}>
+            {!valido ? (
+              <Button variant="primary" onClick={formValido}>
                 Generar Orden
               </Button>
-              ) : (
-                <Button variant="success" type="submit" >
+            ) : (
+              <Button variant="success" type="submit">
                 Orden generada exitosamente!
               </Button>
-              )
-            }
-
+            )}
           </form>
         </>
       )}
