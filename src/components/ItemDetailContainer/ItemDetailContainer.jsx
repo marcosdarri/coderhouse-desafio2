@@ -1,6 +1,6 @@
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getFetch } from "../../helpers/itemsArray";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import FadeLoader from "react-spinners/FadeLoader";
 import "./ItemDetailContainer.css";
@@ -11,12 +11,14 @@ const ItemDetailContainer = () => {
   const { idItem } = useParams();
 
   useEffect(() => {
-    setLoading(true);
+    //llamada a una api. Tarea asincónica  
+    const db = getFirestore()      
+    const itemRef = doc(db, 'items', idItem) 
+    getDoc(itemRef)
+    .then(resp => setItems( { id: resp.id, ...resp.data() } ))
+    .catch(err => console.log(err))
+    .finally(()=> setLoading(false))               
 
-    getFetch()
-      .then((res) => setItems(res.find((item) => item.id === idItem)))
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
   }, [idItem]);
 
   if (loading) {
